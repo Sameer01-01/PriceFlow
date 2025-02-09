@@ -1,3 +1,4 @@
+// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./admin/components/Sidebar";
@@ -11,11 +12,13 @@ import AdminSignin from "./landingpage/signin/AdminSignin";
 import ClientSignin from "./landingpage/signin/ClientSignin";
 import AdminSignup from "./landingpage/signup/AdminSignup";
 import ClientSignup from "./landingpage/signup/ClientSignup";
-import ClientDashboard from "./clientportal/pages/ClientDashboard"; 
+import ClientDashboard from "./clientportal/pages/ClientDashboard";
+import Navbar from "./landingpage/Navbar";  // Import Navbar here
 
 function App() {
   return (
     <Router>
+      <Navbar /> {/* Include Navbar globally in your App if needed */}
       <Routes>
         {/* Landing page with client and admin options */}
         <Route path="/" element={<LandingPage />} />
