@@ -13,44 +13,64 @@ import ClientSignin from "./landingpage/signin/ClientSignin";
 import AdminSignup from "./landingpage/signup/AdminSignup";
 import ClientSignup from "./landingpage/signup/ClientSignup";
 import ClientDashboard from "./clientportal/pages/ClientDashboard";
-import Navbar from "./landingpage/Navbar";  // Import Navbar here
+import Navbar from "./landingpage/Navbar";
+import CliCompliance from "./clientportal/pages/CliCompliance";
+import Invoices from "./clientportal/pages/Invoices";
+import Orders from "./clientportal/pages/Orders";
+import Products from "./clientportal/pages/Products";
+import CliSidebar from "./clientportal/components/CliSidebar";
 
 function App() {
   return (
     <Router>
-      <Navbar /> {/* Include Navbar globally in your App if needed */}
+      <Navbar /> {/* Navbar is always present */}
       <Routes>
-        {/* Landing page with client and admin options */}
+        {/* Landing page */}
         <Route path="/" element={<LandingPage />} />
 
-        {/* Admin and Client Sign In Pages */}
+        {/* Authentication */}
         <Route path="/signin/admin" element={<AdminSignin />} />
         <Route path="/signin/client" element={<ClientSignin />} />
-
-        {/* Admin and Client Sign Up Pages */}
         <Route path="/signup/admin" element={<AdminSignup />} />
         <Route path="/signup/client" element={<ClientSignup />} />
 
-        {/* Admin portal routes */}
+        {/* Admin Panel (Sidebar Persistent) */}
         <Route
-          path="/admin/dashboard"
+          path="/admin/*"
           element={
             <div className="flex">
               <Sidebar />
               <div className="flex-1 bg-gray-100 p-6">
-                <Dashboard />
+                <Routes>
+                  <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="pricing" element={<Pricing />} />
+                  <Route path="compliance" element={<Compliance />} />
+                  <Route path="analytics" element={<Analytics />} />
+                  <Route path="reports" element={<Reports />} />
+                </Routes>
               </div>
             </div>
           }
         />
-        <Route path="/admin/pricing" element={<Pricing />} />
-        <Route path="/admin/compliance" element={<Compliance />} />
-        <Route path="/admin/analytics" element={<Analytics />} />
-        <Route path="/admin/reports" element={<Reports />} />
 
-        {/* Client portal routes */}
-        <Route path="/client/dashboard" element={<ClientDashboard />} />
-        {/* Add more client routes here */}
+        {/* Client Panel (Sidebar Persistent) */}
+        <Route
+          path="/client/*"
+          element={
+            <div className="flex">
+              <CliSidebar />
+              <div className="flex-1 bg-gray-100 p-6">
+                <Routes>
+                  <Route path="dashboard" element={<ClientDashboard />} />
+                  <Route path="compliance" element={<CliCompliance />} />
+                  <Route path="invoices" element={<Invoices />} />
+                  <Route path="orders" element={<Orders />} />
+                  <Route path="products" element={<Products />} />
+                </Routes>
+              </div>
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );
