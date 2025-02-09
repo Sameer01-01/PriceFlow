@@ -1,6 +1,5 @@
-// src/App.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Sidebar from "./admin/components/Sidebar";
 import Dashboard from "./admin/pages/Dashboard";
 import Pricing from "./admin/pages/Pricing";
@@ -23,7 +22,19 @@ import CliSidebar from "./clientportal/components/CliSidebar";
 function App() {
   return (
     <Router>
-      <Navbar /> {/* Navbar is always present */}
+      <RouteWithNavbar />
+    </Router>
+  );
+}
+
+function RouteWithNavbar() {
+  const location = useLocation(); // Now inside the Router
+
+  return (
+    <>
+      {/* Render Navbar only if the current path is the homepage ("/") */}
+      {location.pathname === "/" && <Navbar />}
+      
       <Routes>
         {/* Landing page */}
         <Route path="/" element={<LandingPage />} />
@@ -72,7 +83,7 @@ function App() {
           }
         />
       </Routes>
-    </Router>
+    </>
   );
 }
 

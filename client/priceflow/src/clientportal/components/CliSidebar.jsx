@@ -8,31 +8,31 @@ const CliSidebar = () => {
       <div className="p-6 text-xl font-bold">PriceFlow</div>
       <ul className="space-y-4">
         <li>
-          <Link to="/" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
+          <Link to="/client/dashboard" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
             <FaHome className="text-xl" />
             <span>ClientDashboard</span>
           </Link>
         </li>
         <li>
-          <Link to="/products" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
+          <Link to="/client/products" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
             <FaShoppingBag className="text-xl" />
             <span>Products</span>
           </Link>
         </li>
         <li>
-          <Link to="/invoices" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
+          <Link to="/client/invoices" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
             <FaClipboardCheck className="text-xl" />
             <span>Invoices</span>
           </Link>
         </li>
         <li>
-          <Link to="/orders" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
+          <Link to="/client/orders" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
             <FaRegListAlt className="text-xl" />
             <span>Orders</span>
           </Link>
         </li>
         <li>
-          <Link to="/compliance" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
+          <Link to="/client/compliance" className="flex items-center space-x-2 p-4 hover:bg-cyan-700">
             <FaRegFileAlt className="text-xl" />
             <span>Compliance</span>
           </Link>
