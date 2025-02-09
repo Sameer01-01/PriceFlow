@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import Dashboard from "./pages/Dashboard";
-import Pricing from "./pages/Pricing";
-import Compliance from "./pages/Compliance";
-import Analytics from "./pages/Analytics";
-import Reports from "./pages/Reports";
+import Sidebar from "./admin/components/Sidebar";
+import Dashboard from "./admin/pages/Dashboard";
+import Pricing from "./admin/pages/Pricing";
+import Compliance from "./admin/pages/Compliance";
+import Analytics from "./admin/pages/Analytics";
+import Reports from "./admin/pages/Reports";
 
 function App() {
   return (
