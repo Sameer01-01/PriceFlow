@@ -1,0 +1,9 @@
+{
+    "labels": ["Paracetamol", "Amoxicillin", "Metformin", "Aspirin", "Lipitor"],
+    "values": [65, 59, 80, 81, 56],
+    "pieLabels1": ["Category 1", "Category 2", "Category 3"],
+    "pieValues1": [40, 30, 30],
+    "pieLabels2": ["Type A", "Type B", "Type C"],
+    "pieValues2": [50, 25, 25]
+  }
+  
